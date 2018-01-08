@@ -614,9 +614,9 @@ private File currDataFile; // // stores the current data file that is being used
                     IPanel.setImgBuff(realImg);
                     IPanel.repaint();*/
                    
-                //Scaling operation
+                //Scaling operation 
 
-                    AffineTransform upScale = new AffineTransform(), downScale = new AffineTransform();
+                    AffineTransform upScale = new AffineTransform(), downScale = new AffineTransform(); 
                     downScale.setToScale(0.5, 0.5);
                     upScale.setToScale(2, 2);
                     AffineTransformOp downScaling = new AffineTransformOp(downScale,AffineTransformOp.TYPE_BILINEAR);
