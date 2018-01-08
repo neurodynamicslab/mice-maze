@@ -650,10 +650,10 @@ private File currDataFile; // // stores the current data file that is being used
                  
                  ImageStatistics stat = new ImageStatistics();
                  
-                 stat = ImageStatistics.getStatistics(imp_filt.getProcessor());
+                 stat = ImageStatistics.getStatistics(imp_filt.getProcessor(),ImageStatistics.MIN_MAX,null);
                  double filt_min = stat.min;
                  double filt_max = stat.max;
-                 stat = ImageStatistics.getStatistics(imp_raw.getProcessor());
+                 stat = ImageStatistics.getStatistics(imp_raw.getProcessor(),ImageStatistics.MIN_MAX,null);
                  double raw_min = stat.min;
                  double raw_max = stat.max;
                  
