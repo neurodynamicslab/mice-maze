@@ -33,7 +33,7 @@ import java.io.FileWriter;
  *
  * @author Balaji
  */
-public class WaterMazeMainFrame extends javax.swing.JFrame {
+                                                                                                      public class WaterMazeMainFrame extends javax.swing.JFrame {
 
     private float[] DataX;
     private float[] DataY;
@@ -613,7 +613,7 @@ private File currDataFile; // // stores the current data file that is being used
                     ImageFrame.pack();
                     IPanel.setImgBuff(realImg);
                     IPanel.repaint();*/
-                   
+                                                 
                 //Scaling operation 
 
                     AffineTransform upScale = new AffineTransform(), downScale = new AffineTransform(); 
