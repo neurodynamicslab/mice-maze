@@ -1,3 +1,5 @@
+package watermaze_ver_3_0;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -9,7 +11,7 @@
  * Created on Feb 16, 2011, 12:12:54 PM
  */
 
-package watermaze_ver_3_0;
+
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

@@ -1,9 +1,11 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                      package watermaze_ver_3_0; 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package watermaze_ver_3_0;
+
 
 import java.awt.Dimension;
 import java.awt.Insets;
@@ -33,21 +35,27 @@ import java.io.FileWriter;
  *
  * @author Balaji
  */
-                                                                                                      public class WaterMazeMainFrame extends javax.swing.JFrame {
+public class WaterMazeMainFrame extends javax.swing.JFrame {
 
-    private float[] DataX;
-    private float[] DataY;
+    private float[] DataX;        // float array to store x- co - ordinates of the mice position 
+    private float[] DataY;        // float array to store y- co-ordinate of the mice position
 
     /**
      * Creates new form WaterMazeMainFramewh
      */
-    public WaterMazeMainFrame() {
-        this.dataFiles = null;
+    public WaterMazeMainFrame() {           // the default constructor for the "main" class. 
+        this.dataFiles = null;              // This is array of datafiles to be processed by the program. Put in place with 
+                                            // idea future expansion to batch processing of multiple files. We initialise at the 
+                                            //start of the program to null. So that we assign the files after getting inputs from the
+                                            //user.
         initComponents();
     }
 
     /**
-     *
+     * This function reads the co-ordinates from the files saved in *.WMDF format (watermaze data file format)
+     * These files are saved when acquiring water maze files from Coulborn Systems. The format for decoding is deciphered from
+     * matlab files that is present as a supplementary information in Paul's maximum entropy measure for watermaze paper. 
+     * https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2802531/
      * @return
      */
     public int readWMDFData(){
@@ -140,6 +148,7 @@ import java.io.FileWriter;
     private void initComponents() {
 
         RawImagePanel = new watermaze_ver_3_0.ImagePanel();
+        Secondary_ImagePanel = new watermaze_ver_3_0.ImagePanel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -173,6 +182,19 @@ import java.io.FileWriter;
         );
 
         getContentPane().add(RawImagePanel);
+
+        javax.swing.GroupLayout Secondary_ImagePanelLayout = new javax.swing.GroupLayout(Secondary_ImagePanel);
+        Secondary_ImagePanel.setLayout(Secondary_ImagePanelLayout);
+        Secondary_ImagePanelLayout.setHorizontalGroup(
+            Secondary_ImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+        Secondary_ImagePanelLayout.setVerticalGroup(
+            Secondary_ImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(Secondary_ImagePanel);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -434,6 +456,7 @@ import java.io.FileWriter;
     private javax.swing.JMenuItem ExpXY;
     private javax.swing.JMenuItem GenerateHMap;
     private watermaze_ver_3_0.ImagePanel RawImagePanel;
+    private watermaze_ver_3_0.ImagePanel Secondary_ImagePanel;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenu analyseMenu;
     private javax.swing.JMenuItem contentsMenuItem;
