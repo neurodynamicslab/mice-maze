@@ -514,7 +514,8 @@ private File currDataFile; // // stores the current data file that is being used
             xidx = (dataX[count] > 0 && dataX[count] < 1 ) ? 1 : (int)dataX[count];
             yidx = (dataY[count] > 0 && dataY[count] < 1) ? 1 : (int)dataY[count];
             if(xidx < xMax && yidx < yMax && xidx > 0 && yidx > 0)
-                Image[((yidx-1)*xMax)+ xidx] += 10;
+               // Image[((yidx-1)*xMax)+ xidx] += 10;
+                 Image[((yidx)*xMax)+ xidx] += 10;
         }
         return Image.clone();
 
